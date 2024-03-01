@@ -17,20 +17,11 @@ public class TradutorServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         
         String palavra = request.getParameter("palavra");
-        String traducao = "Tradução: " + palavra;
+        String traducao = palavra;
         
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Duoulingou</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>" + traducao + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        request.setAttribute("traducao", traducao);
+        request.getRequestDispatcher("resposta.jsp").forward(request, response);
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
