@@ -5,11 +5,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Duoulingou</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="container">
+            <div id="container__title">
+                <h1>Descubra a tradução de uma palavra em português no inglês</h1>
+            </div>
+            <div id="container__form">
+                <form method="get" action="/servlet-mvc-duoulingou/traduzir">
+                    <input type="text" id="palavra" name="palavra"
+                           pattern="^[A-Za-z\u00C0-\u00ff]{2,46}$" title="deve ser uma palavra de tamanho [2, 46] sem caracteres especiais"
+                           placeholder="ex.: gato, maçã, música" />
+                    <input type="submit" id="btnSubmit" value="Traduzir" />
+                </form>
+            </div>
+        </div>
     </body>
 </html>
